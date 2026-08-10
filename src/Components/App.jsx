@@ -6,6 +6,7 @@ import { words } from "./words"
 import Word from "./Word"
 import Keyboard from "./Keyboard"
 import Button from "./Button"
+import Confetti from "react-confetti"
 
 export default function App() {
     const [word, setWord] = useState(() => words[Math.floor(Math.random() * words.length)]);
@@ -40,6 +41,7 @@ export default function App() {
             <Word word={wordList} guessed={guessed} over={over}/>
             <Keyboard handleClick={handleKeyPress} wrong={wrongLetters} correct={correctLetters} over={over}/>
             {over ? <Button handleClick={handleButton} /> : <></>}
+            {won? <Confetti/> : <></>}
         </>
     )
 }
