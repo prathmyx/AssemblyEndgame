@@ -1,11 +1,15 @@
 export default function Keyboard(props) {
+    const alphaList = "qwertyuiopasdfghjklzxcvbnm".split("");
+
     return (
         <section className="keys-container">
-            {props.alpha.map((keys) => {
+            {alphaList.map((char) => {
                 return (
-                    <button className="keys"
-                          key={keys}>
-                        {keys.toUpperCase()}
+                    <button className= 
+                    {"keys " + (props.correct.includes(char) ? "correct" : (props.wrong.includes(char) ? "wrong" : ""))} 
+                            key={char}
+                            onClick={(e) => props.handleClick(char)}>
+                        {char.toUpperCase()}
                     </button>
                 )
             })}
