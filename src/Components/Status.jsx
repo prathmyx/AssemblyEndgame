@@ -1,6 +1,6 @@
 export default function Status(props) {
     let styles = {
-        backgroundColor: props.won ? "#10A95B" : "red"
+        backgroundColor: props.won ? "#10A95B" : "#BA2A2A"
     }
 
     return (
