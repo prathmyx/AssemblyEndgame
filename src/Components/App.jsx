@@ -2,12 +2,13 @@ import { useState } from "react"
 import Status from "./Status"
 import Chips from "./Chips"
 import { languages } from "./languages"
+import { words } from "./words"
 import Word from "./Word"
 import Keyboard from "./Keyboard"
 import Button from "./Button"
 
 export default function App() {
-    const [word, setWord] = useState("react");
+    const [word, setWord] = useState(() => words[Math.floor(Math.random() * words.length)]);
     const [guessed, setGuessed] = useState([]);
 
     const wrongLetters = guessed.filter((letter) => !word.includes(letter));
@@ -23,19 +24,22 @@ export default function App() {
         )
     }
 
-    const langs = languages.map((lang) => {
-        return {...lang, isAlive: true}
-    });
+    function handleButton() {
+        setWord(
+            prevWord => words[Math.floor(Math.random() * words.length)]
+        );
+        setGuessed([]);
+    }
 
     const wordList = word.split("");
 
     return (
         <>
             <Status lastDied={(wrongCount - 1 >= 0)? languages[wrongCount-1].name : ""} won={won} over={over} />
-            <Chips list={langs} wrongNo={wrongCount}/>
+            <Chips list={languages} wrongNo={wrongCount}/>
             <Word word={wordList}/>
             <Keyboard handleClick={handleKeyPress} wrong={wrongLetters} correct={correctLetters} over={over}/>
-            <Button handleClick={false} />
+            {over ? <Button handleClick={handleButton} /> : <></>}
         </>
     )
 }
