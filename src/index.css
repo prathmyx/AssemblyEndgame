@@ -61,3 +61,16 @@ section.status-container {
 .status-body {
     margin: 5px;
 }
+
+.chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    max-width: 400px;
+}
+
+span.chip {
+    border-radius: 3px;
+    padding: 5px;
+}
