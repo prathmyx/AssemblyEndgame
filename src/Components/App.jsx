@@ -11,9 +11,10 @@ export default function App() {
     const [guessed, setGuessed] = useState([]);
 
     const wrongLetters = guessed.filter((letter) => !word.includes(letter));
+    const wrongCount = wrongLetters.length;
     const correctLetters = guessed.filter((letter) => word.includes(letter));
 
-    const over = (wrongLetters.length == languages.length) || (correctLetters.length == new Set(word).size);
+    const over = (wrongCount == languages.length) || (correctLetters.length == new Set(word).size);
     const won = (correctLetters.length == new Set(word).size);
 
     function handleKeyPress(letter) {
@@ -30,8 +31,8 @@ export default function App() {
 
     return (
         <>
-            <Status lastDied={(wrongLetters.length - 1 >= 0)? languages[wrongLetters.length-1].name : ""} won={won} over={over} />
-            <Chips list={langs}/>
+            <Status lastDied={(wrongCount - 1 >= 0)? languages[wrongCount-1].name : ""} won={won} over={over} />
+            <Chips list={langs} wrongNo={wrongCount}/>
             <Word word={wordList}/>
             <Keyboard handleClick={handleKeyPress} wrong={wrongLetters} correct={correctLetters} over={over}/>
             <Button handleClick={false} />
