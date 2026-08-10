@@ -63,6 +63,7 @@ section.status-container {
 }
 
 .chips-container {
+    margin-block: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
