@@ -1,4 +1,4 @@
-# Assembly: Endgame
+# Assembly: Endgame 🧩
 
 A React-based word guessing game. The project challenges players to guess a hidden word while trying to keep the programming languages alive.
 
