@@ -43,3 +43,20 @@ div#root {
     max-width: 500px;
     color: #8E8E8E;
 }
+
+section.status-container {
+    width: 80%;
+    color: #F9F4DA;
+    margin-block: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.status-head {
+    font-size: 1.25rem;
+    margin: 5px;
+}
+
+.status-body {
+    margin: 5px;
+}
