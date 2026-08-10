@@ -25,7 +25,7 @@ export default function Status(props) {
 
     let styles = {
         backgroundColor: props.over ? (props.won ? "#10A95B" : "#BA2A2A") : "#7A5EA7" ,
-        visibility: (language == "" ? "hidden" : "")
+        visibility: ((language == "" && !props.over )? "hidden" : "")
     }
 
     if (!props.over) {
