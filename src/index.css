@@ -62,8 +62,12 @@ section.status-container {
     margin: 5px;
 }
 
+.status-para {
+    text-align: center;
+}
+
 .chips-container {
-    margin-block: 20px;
+    margin-block: 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
