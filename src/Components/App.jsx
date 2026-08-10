@@ -37,7 +37,7 @@ export default function App() {
         <>
             <Status lastDied={(wrongCount - 1 >= 0)? languages[wrongCount-1].name : ""} won={won} over={over} />
             <Chips list={languages} wrongNo={wrongCount}/>
-            <Word word={wordList}/>
+            <Word word={wordList} guessed={guessed} over={over}/>
             <Keyboard handleClick={handleKeyPress} wrong={wrongLetters} correct={correctLetters} over={over}/>
             {over ? <Button handleClick={handleButton} /> : <></>}
         </>
