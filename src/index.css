@@ -93,3 +93,33 @@ span.word-char {
     font-size: 1.125rem;
     border-bottom: 1px solid #F9F4DA;
 }
+
+section.keys-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    max-width: 450px;
+    margin-bottom: 36px;
+}
+
+button.keys {
+    height: 35px;
+    width: 35px;
+    background-color: #FCBA29;
+    border: 1px solid #D7D7D7;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button.new-game {
+    background-color: #11B5E5;
+    border: 1px solid #D7D7D7;
+    border-radius: 4px;
+    width: 150px;
+    height: 40px;
+    padding: 6px 12px;
+    display: block;
+    margin-inline: auto;
+    cursor: pointer;
+}
