@@ -112,6 +112,14 @@ button.keys {
     cursor: pointer;
 }
 
+button.keys.correct {
+    background-color: #10A95B;
+}
+
+button.keys.wrong {
+    background-color: #EC5D49;
+}
+
 button.new-game {
     background-color: #11B5E5;
     border: 1px solid #D7D7D7;

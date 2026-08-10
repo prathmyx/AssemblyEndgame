@@ -8,6 +8,16 @@ import Button from "./Button"
 
 export default function App() {
     const [word, setWord] = useState("react");
+    const [guessed, setGuessed] = useState([]);
+
+    const wrongLetters = guessed.filter((letter) => !word.includes(letter));
+    const correctLetters = guessed.filter((letter) => word.includes(letter));
+
+    function handleKeyPress(letter) {
+        setGuessed(
+            prevGuessed => [... new Set(prevGuessed).add(letter)]
+        )
+    }
 
     const langs = languages.map((lang) => {
         return {...lang, isAlive: true}
@@ -15,14 +25,12 @@ export default function App() {
 
     const wordList = word.split("");
 
-    const alphaList = "qwertyuiopasdfghjklzxcvbnm".split("");
-
     return (
         <>
             <Status won={true}/>
             <Chips list={langs}/>
             <Word word={wordList}/>
-            <Keyboard alpha={alphaList} />
+            <Keyboard handleClick={handleKeyPress} wrong={wrongLetters} correct={correctLetters}/>
             <Button handleClick={false} />
         </>
     )
