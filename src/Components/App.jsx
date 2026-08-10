@@ -13,6 +13,9 @@ export default function App() {
     const wrongLetters = guessed.filter((letter) => !word.includes(letter));
     const correctLetters = guessed.filter((letter) => word.includes(letter));
 
+    const over = (wrongLetters.length == languages.length) || (correctLetters.length == new Set(word).size);
+    const won = (correctLetters.length == new Set(word).size);
+
     function handleKeyPress(letter) {
         setGuessed(
             prevGuessed => [... new Set(prevGuessed).add(letter)]
@@ -27,10 +30,10 @@ export default function App() {
 
     return (
         <>
-            <Status won={true}/>
+            <Status lastDied={(wrongLetters.length - 1 >= 0)? languages[wrongLetters.length-1].name : ""} won={won} over={over} />
             <Chips list={langs}/>
             <Word word={wordList}/>
-            <Keyboard handleClick={handleKeyPress} wrong={wrongLetters} correct={correctLetters}/>
+            <Keyboard handleClick={handleKeyPress} wrong={wrongLetters} correct={correctLetters} over={over}/>
             <Button handleClick={false} />
         </>
     )

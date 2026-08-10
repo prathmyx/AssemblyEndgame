@@ -8,6 +8,7 @@ export default function Keyboard(props) {
                     <button className= 
                     {"keys " + (props.correct.includes(char) ? "correct" : (props.wrong.includes(char) ? "wrong" : ""))} 
                             key={char}
+                            disabled={props.over}
                             onClick={(e) => props.handleClick(char)}>
                         {char.toUpperCase()}
                     </button>

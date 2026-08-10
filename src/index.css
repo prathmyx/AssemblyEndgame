@@ -47,18 +47,18 @@ div#root {
 
 section.status-container {
     width: 80%;
+    height: 10vh;
     color: #F9F4DA;
     margin-block: 10px;
     border-radius: 10px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .status-head {
     font-size: 1.25rem;
-    margin: 5px;
-}
-
-.status-body {
     margin: 5px;
 }
 
