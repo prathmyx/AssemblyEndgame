@@ -1,5 +1,11 @@
 export default function Keyboard(props) {
     const alphaList = "qwertyuiopasdfghjklzxcvbnm".split("");
+    document.addEventListener("keydown", function (e) {
+        const key = e.key.toLowerCase();
+        if (/^[a-z]$/.test(key) ) {
+            props.handleClick(key);
+        }
+    } )
 
     return (
         <section className="keys-container">
