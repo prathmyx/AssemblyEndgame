@@ -34,9 +34,8 @@ The application is organized into separate, reusable components to keep the code
 ```text
 src/
 ├── components/
-│   ├── ...
+│   ├── App.jsx
 │   └── ...
-├── App.jsx
 ├── index.css
 └── main.jsx
 ```
